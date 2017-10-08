@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context="tabian.com.swipemenulistview.MainActivity">
 
+
     <Button
         android:id="@+id/btnAddId"
         android:layout_width="wrap_content"
@@ -14,21 +15,24 @@
         android:text="Adicionar"
         app:layout_constraintBottom_toTopOf="@+id/listView"
         tools:layout_editor_absoluteX="279dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignBaseline="@+id/edTxtId"
+        android:layout_alignBottom="@+id/edTxtId"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="61dp" />
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:id="@+id/edTxtId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:layout_alignTop="@+id/btnAddId"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignBottom="@+id/btnAddId" />
+        android:layout_below="@+id/rgEstilosId"
+        android:layout_marginTop="30dp"
+        android:layout_toLeftOf="@+id/btnAddId"
+        android:layout_toStartOf="@+id/btnAddId"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColorLink="@android:color/background_dark" />
 
     <com.baoyz.swipemenulistview.SwipeMenuListView
         android:id="@+id/listView"
@@ -36,12 +40,14 @@
         android:layout_height="300dp"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="58dp"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/btnAddId"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
 
     </com.baoyz.swipemenulistview.SwipeMenuListView>
+
 
 </android.widget.RelativeLayout>
