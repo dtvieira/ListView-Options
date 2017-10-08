@@ -1,6 +1,4 @@
-# SwipeListView
-
-Menu options
+# ListView Menu options
 
         //delete with a swipe menu
         swipeMenu();
