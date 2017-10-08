@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.BounceInterpolator;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -96,9 +97,9 @@ public class MainActivity extends AppCompatActivity {
             int indiceColunaTarefa = cursor.getColumnIndex("tarefa");
 
             //create the adapter
-            ids = new ArrayList<Integer>();
-            itens = new ArrayList<String>();
-            itensAdaptador = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_2, android.R.id.text1, itens);
+            ids = new ArrayList<>();
+            itens = new ArrayList<>();
+            itensAdaptador = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_2, android.R.id.text1, itens);
             listView.setAdapter(itensAdaptador);
 
             SwipeMenuCreator creator = new SwipeMenuCreator() {
@@ -112,7 +113,9 @@ public class MainActivity extends AppCompatActivity {
                     openItem.setBackground(new ColorDrawable(Color.rgb(0xF9,
                             0x3F, 0x25)));
                     // set item width
-                    openItem.setWidth(170);
+
+                    openItem.setWidth(370);
+
                     // set item title
                     openItem.setTitle("Delete");
                     // set item title fontsize
@@ -138,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             };
 
             listView.setMenuCreator(creator);
-
+            listView.setCloseInterpolator(new BounceInterpolator());
             listView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
